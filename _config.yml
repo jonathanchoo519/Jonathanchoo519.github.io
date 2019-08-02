@@ -1,6 +1,6 @@
 # Site settings
-title: JonathanChoo Blog
-SEOTitle: JonathanChoo的博客 | JonathanChoo Blog
+title: Jonathan Blog
+SEOTitle: JonathanChoo的博客 | Jonathan Blog
 header-img: img/post-bg-desk.jpg
 email: jonathanchoo@foxmail.com
 description: "Every failure is leading towards success."
@@ -18,12 +18,12 @@ sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's us
 
 # SNS settings
 RSS: false
-# weibo_username:     qiubaiying
-zhihu_username:     qiubaiying
+weibo_username:     qiubaiying
+#zhihu_username:     qiubaiying
 github_username:    qiubaiying
-facebook_username:  baiying.qiu.7
-jianshu_username:   e71990ada2fd
-#twitter_username:   qiubaiying
+#facebook_username:  baiying.qiu.7
+#jianshu_username:   e71990ada2fd
+twitter_username:   qiubaiying
 
 
 
