@@ -24,33 +24,33 @@ tags:
 MySQL短连接每次请求操作数据库都需要建立与MySQL服务器建立TCP连接，这是需要时间开销的。TCP连接需要3次网络通信。这样就增加了一定的延时和额外的IO消耗。请求结束后会关闭MySQL连接，还会发生3/4次网络通信。close操作不会增加响应延时，原因是close后是由操作系统自动进行通信的，应用程序感知不到，长连接就可以避免每次请求都创建连接的开销，节省了时间和IO消耗。
 
 	type Config struct {
- 	DSN         string
-  Active      int            // pool
-  Idle        int            // pool
-  IdleTimeout xtime.Duration // connect max life time.
-}
+    DSN         string
+    Active      int            // pool
+    Idle        int            // pool
+    IdleTimeout xtime.Duration // connect max life time.
+    }
 
-// NewMysql initialize mysql connection .
-func NewMysql(c *Config) (db *sql.DB) {
-  // TODO add query exec and transaction timeout .
-  db, err := Open(c)
-  if err != nil {
-    panic(err)
-  }
-  return
-}
+    // NewMysql initialize mysql connection .
+    func NewMysql(c *Config) (db *sql.DB) {
+    // TODO add query exec and transaction timeout .
+    db, err := Open(c)
+    if err != nil {
+      panic(err)
+    }
+      return
+    }
 
-func Open(c *Config) (db *sql.DB, err error) {
-  db, err = sql.Open("mysql", c.DSN)
-  if err != nil {
-    log.Error("sql.Open() error(%v)", err)
-    return nil, err
-  }
-  db.SetMaxOpenConns(c.Active)
-  db.SetMaxIdleConns(c.Idle) // 默认情况下，sql.DB允许在连接池中保留最多2个空闲连接
-  db.SetConnMaxLifetime(time.Duration(c.IdleTimeout))
-  return db, nil
-}
+    func Open(c *Config) (db *sql.DB, err error) {
+    db, err = sql.Open("mysql", c.DSN)
+    if err != nil {
+      log.Error("sql.Open() error(%v)", err)
+      return nil, err
+     }
+    db.SetMaxOpenConns(c.Active)
+    db.SetMaxIdleConns(c.Idle) // 默认情况下，sql.DB允许在连接池中保留最多2个空闲连接
+    db.SetConnMaxLifetime(time.Duration(c.IdleTimeout))
+    return db, nil
+    }
 
 
 从理论上讲，在连接池中允许更多的空闲连接会提高性能，因为它不太可能需要从头开始建立新的连接，因此有助于节省资源。
