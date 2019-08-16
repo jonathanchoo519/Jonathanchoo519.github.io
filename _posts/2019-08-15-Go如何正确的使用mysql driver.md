@@ -49,7 +49,7 @@ MySQL短连接每次请求操作数据库都需要建立与MySQL服务器建立T
         db.SetMaxOpenConns(c.Active)
         db.SetMaxIdleConns(c.Idle) // 默认情况下，sql.DB允许在连接池中保留最多2个空闲连接
         db.SetConnMaxLifetime(time.Duration(c.IdleTimeout))
-     return db, nil
+        return db, nil
     }
 
 
