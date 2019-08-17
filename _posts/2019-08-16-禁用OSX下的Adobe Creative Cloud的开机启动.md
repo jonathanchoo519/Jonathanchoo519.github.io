@@ -1,11 +1,11 @@
 ---
 layout:     post
-title:      禁用OSX下的Adobe Creative Cloud的开机启动
+title:      OSX下禁用Adobe Creative Cloud的开机启动
 subtitle:   
 date:       2019-08-16
 author:     JC
 header-img: img/adobe.jpg
-catalog: true
+catalog: false
 tags:
     - Adobe
 ---
@@ -13,7 +13,9 @@ tags:
 电脑里不装个PS还真不行，Adobe挺讲究，免费赠送安装了Adobe Creative Cloud等程序，启动系统时会跟上一堆Adobe的各种服务，就差全家捅了。看着碍眼，不用时也占系统资源。网上看了一些去除Adobe自启动的方法，有那么费劲吗？算了来干货：
 
 	KingCHdeMacBook-Pro:~ JonathanChoo$ cd /Library/LaunchAgents/
+	
 	KingCHdeMacBook-Pro:LaunchAgents JonathanChoo$ ls
+	
 	com.adobe.AAM.Updater-1.0.plist		com.oracle.java.Java-Updater.plist
 	com.adobe.AdobeCreativeCloud.plist	com.sogou.SogouServices.plist
 	com.adobe.GC.AGM.plist			com.tencent.LemonMonitor.plist
