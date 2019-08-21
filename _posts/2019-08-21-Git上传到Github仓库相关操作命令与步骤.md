@@ -10,7 +10,7 @@ tags:
     - Git
     - Github
 ---
-### 第一步：cd进入你放项目文件的地址，我的地址在D:\MYFILE\graduation\study\项目程序
+### 第一步：cd进入你放项目文件的地址
 
 ### 第二步：输入git init
 
@@ -22,10 +22,13 @@ tags:
 
 这个是将项目上所有的文件添加到仓库中的意思，如果想添加某个特定的文件，只需把.换成这个特定的文件名即可。
 
-### 第四步输入git commit -m "first commit"，表示你对这次提交的注释，双引号里面的内容可以根据个人的需要
-改。
+### 第四步输入git commit -m "first commit"，
 
-### 第五步输入git remote add origin https://自己的仓库url地址（上面有说到） 将本地的仓库关联到github上，
+表示你对这次提交的注释，双引号里面的内容可以根据个人的需要改。
+
+### 第五步输入git remote add origin https://自己的仓库url地址
+
+（上面有说到） 将本地的仓库关联到github上，
 
 ### 最后一步，输入git push -u origin master，这是把代码上传到github仓库的意思。
 
