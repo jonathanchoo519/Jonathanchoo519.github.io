@@ -144,9 +144,9 @@ tags:
 		return nil
 	}
 
-![avatar](img/OCR/ocr1.png)
+![avatar](/img/OCR/ocr1.png)
 
-![avatar](img/OCR/ocr2.png)
+![avatar](/img/OCR/ocr2.png)
 
 
 
