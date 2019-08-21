@@ -42,7 +42,7 @@ tags:
 
 	const (
 		clientID     = "cmnLxxxxVgyaEf"           			// API Key
-		clientSecret = "zPkV7xxxxxZH77Q2"  					// Secret Key
+		clientSecret = "zPkV7xxxxxZH77Q2"  				// Secret Key
 	)
 
 	type Session struct {
@@ -142,7 +142,7 @@ tags:
 		}
 		
 		return nil
-}
+	}
 
 ![avatar](img/OCR/ocr1.png)
 
