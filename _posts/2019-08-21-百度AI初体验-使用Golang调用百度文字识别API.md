@@ -42,7 +42,7 @@ tags:
 
 	const (
 		clientID     = "cmnLxxxxVgyaEf"           			// API Key
-		clientSecret = "zPkV7xxxxxZH77Q2"  					// Secret Key
+		clientSecret = "zPkV7xxxxxZH77Q2"  				// Secret Key
 	)
 
 	type Session struct {
@@ -58,6 +58,7 @@ tags:
 	func main() {
 		token, err := accessToken(clientID, clientSecret)
 		if err != nil {
+			
 			fmt.Println("accessToken Error: ", err)
 			return
 		}
@@ -65,12 +66,14 @@ tags:
 
 		img, err := ioutil.ReadFile("test.JPG")//官方提示JPG成功率较高
 		if err != nil {
+		
 			fmt.Println("ReadFile Error: ", err)
 			return
 		}
 
 		err = ImageToText(*token, img)
 		if err != nil {
+		
 			fmt.Println("ImageToText Error: ", err)
 			return
 		}
@@ -80,18 +83,21 @@ tags:
 		apiURL := fmt.Sprintf("https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=%s&client_secret=%s", id, secret)
 		resp, err := http.Get(apiURL)
 		if err != nil {
+		
 			fmt.Println("HTTP Get Error")
 			return nil, err
 		}
 		defer resp.Body.Close()
 		body, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
+		
 			fmt.Println("Read Response Body Error")
 			return nil, err
 		}
 		var session Session
 		err = json.Unmarshal(body, &session)
 		if err != nil {
+		
 			fmt.Println("Unmarshal Session Json Error")
 			return nil, err
 		}
@@ -104,22 +110,26 @@ tags:
 		param := "image=" + url.QueryEscape(base64.StdEncoding.EncodeToString(image))
 		resp, err := http.Post(apiURL, "application/x-www-form-urlencoded", strings.NewReader(param))
 		if err != nil {
+		
 			return err
 		}
 		defer resp.Body.Close()
 		body, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
+		
 			fmt.Println("Read Response Body Error")
 			return err
 		}
 		
 		json, err := simplejson.NewJson([]byte(body))
 		if err != nil {
+		
 			fmt.Println("Unmarshal Result Json Error")
 			return err
 		}
 		rows,err := json.Get("words_result").Array()
 		if err != nil{
+		
 			fmt.Println("Json Get Error: ",err)
 		}
 		//fmt.Println(rows)
@@ -132,11 +142,11 @@ tags:
 		}
 		
 		return nil
-}
+	}
 
-![avatar](img/ocr/ocr1.png)
+![avatar](/img/OCR/ocr1.png)
 
-![avatar](img/ocr/ocr2.png)
+![avatar](/img/OCR/ocr2.png)
 
 
 
