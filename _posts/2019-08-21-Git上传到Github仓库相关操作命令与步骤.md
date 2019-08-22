@@ -30,6 +30,8 @@ tags:
 
 （上面有说到） 将本地的仓库关联到github上，
 
-### 最后一步，输入git push -u origin master，这是把代码上传到github仓库的意思。
+### 最后一步，输入git push -u origin master
+
+这是把代码上传到github仓库的意思。
 
 执行完后，如果没有异常，会等待几秒，然后跳出一个让你输入Username和Password 的窗口，你只要输人github的登录账号和密码就行了。
