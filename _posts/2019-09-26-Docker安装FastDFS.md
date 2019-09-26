@@ -1,6 +1,7 @@
 ---
 layout:     post
 title:      Docker安装FastDFS
+subtitle:   不使用docker手动去编译安装fastdfs简直是噩梦...
 date:       2019-09-26
 author:     JC
 header-img: img/golang.jpg
