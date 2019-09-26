@@ -100,11 +100,11 @@ client.conf修改如下：
 
 启动容器脚本,先启动一个tracker然后再启动一个storage，-v 后面跟的目录映射，TRACKER_SERVER地址根据自己机器的地址进行配置,–privileged=true主要是解决目录权限。
 
-### 启动tracker
+#### 启动tracker
 
 	docker run -tid --name  tracker -v /usr/local/fastdfs/data/tracker_data/data:/fastdfs/tracker/data -v /usr/local/fastdfs/etc:/fdfs_conf --privileged=true --net=host  season/fastdfs tracker
 
-### 启动storage
+#### 启动storage
 
 	docker run -tid --name storage -v /usr/local/fastdfs/data/storage_data/data:/fastdfs/storage/data -v /usr/local/fastdfs/data/store_path:/fastdfs/store_path -v /usr/local/fastdfs/etc:/fdfs_conf --privileged=true --net=host -e TRACKER_SERVER:172.17.90.65:22122 season/fastdfs storage
 
@@ -130,13 +130,13 @@ client.conf修改如下：
 
 ## 安装Nginx
 
-### 下载相关组件
+#### 下载相关组件
 
 如果未安装git可通过命令安装：
 
 	yum install git
 
-### 下载相关软件。
+#### 下载相关软件。
 
 	git clone https://github.com/happyfish100/libfastcommon.git
 
@@ -144,7 +144,7 @@ client.conf修改如下：
 
 	git clone https://github.com/happyfish100/fastdfs.git
 
-### 安装libfastcommon
+#### 安装libfastcommon
 
 ```
 cd libfastcommon/
@@ -154,7 +154,7 @@ cd libfastcommon/
 ./make.sh install
 ```
 
-### 安装fastdfs
+#### 安装fastdfs
 
 Nginx后续要使用到此环境的配置，因此也需安装。
 ```
@@ -183,7 +183,7 @@ make install
 
 安装成功，则/usr/local/目录下就可以看到nginx。
 
-### 异常情况
+#### 异常情况
 
 此过程如果出现异常：
 
@@ -197,7 +197,7 @@ make install
 
 然后再重新执行configure，make等操作。
 
-### 相关配置
+#### 相关配置
 
 拷贝/usr/local/fastdfs/etc/目录下的内容到/etc/fdfs目录下。将fastdfs-nginx-module/src 目录下的mod_fastdfs.conf也复制到/etc/fdfs。
 
@@ -214,7 +214,7 @@ http.server_port=8880 //需要与nginx监听的端口一致
 
 	url_have_group_name = true //请求路径是否携带组信息 
 
-### 配置Nginx
+#### 配置Nginx
 
 	vim /usr/local/nginx/conf/nginx.conf
 
@@ -256,7 +256,7 @@ tracker_server = 47.100.206.217:22122
 ```
 跟踪服务器的端口，默认80端口，可以在storage中配置中的fdsf.conf中配置。
 
-### docker内部命令修改
+## docker内部命令修改
 如果需要修改docker内部的配置文件，需先安装vim命令。
 
 	apt-get update
@@ -273,7 +273,7 @@ tracker_server = 47.100.206.217:22122
 
 然后再执行更新和安装命令即可。
 
-### 开放防火墙
+## 开放防火墙
 
 在配置文件中配置涉及到的端口，如果需外网访问则需开放对应的防火墙。
 
