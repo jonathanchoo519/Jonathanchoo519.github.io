@@ -7,8 +7,8 @@ header-img: img/centos.jpg
 catalog: false
 tags:
     - CentOS
-    -ShadowSocks
-----
+    - ShadowSocks
+---
 
 ## 1.安装客户端shadowsocks
 ```
