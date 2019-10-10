@@ -28,7 +28,7 @@ docker load -i dashboard.tar
 
 docker image ls|grep k8s.gcr.io/kubernetes-dashboard-amd64
 
-### 
+### 连不上apiserver
 
 错误日志:
 
