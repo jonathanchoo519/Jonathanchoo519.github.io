@@ -1,14 +1,14 @@
 ---
 layout:     post
-title:      2CentOS使用ShadowSocks搭配Privoxy上网的方法
+title:      CentOS使用ShadowSocks搭配Privoxy上网的方法
 date:       2019-10-9
 author:     JC
 header-img: img/centos.jpg
 catalog: false
 tags:
     - CentOS
-    -ShadowSocks
-----
+    - ShadowSocks
+---
 
 ## 1.安装客户端shadowsocks
 ```
