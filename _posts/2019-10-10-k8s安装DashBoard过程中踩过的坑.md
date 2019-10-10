@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      kubeadm部署k8s后安装DashBoard过程中踩过的坑
-date:       2019-10-9
+date:       2019-10-10
 author:     JC
 header-img: img/kubernetes.jpg
 catalog: false
@@ -18,16 +18,18 @@ docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/kubernetes-dashbo
 ```
 **把镜像copy到其他节点**
 
+```
 docker save k8s.gcr.io/kubernetes-dashboard-amd64:v1.10.1 -o dashboard.tar
 
 scp dashboard.tar [IP Address]:/root/
-
+```
 **在其他node节点导入镜像(这里必须！所有的节点都要有镜像！！不然会报pull err)**
 
+```
 docker load -i dashboard.tar
 
 docker image ls|grep k8s.gcr.io/kubernetes-dashboard-amd64
-
+```
 ### 连不上apiserver
 
 错误日志:
