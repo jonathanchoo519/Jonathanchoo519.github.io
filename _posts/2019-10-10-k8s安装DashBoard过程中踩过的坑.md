@@ -125,6 +125,12 @@ EOF
 serviceaccount/dashboard-admin created
 clusterrolebinding.rbac.authorization.k8s.io/dashboard-admin created
 ```
+查看serviceaccount生成的secret文件
+
+```
+[root@master ~]# kubectl get secret -n kube-system |grep dashboard-admin
+dashboard-admin-token-twrjp                      kubernetes.io/service-account-token   3      80s
+```
 
 ```
 [root@master ~]# kubectl describe secret dashboard-admin-token-twrjp -n kube-system
