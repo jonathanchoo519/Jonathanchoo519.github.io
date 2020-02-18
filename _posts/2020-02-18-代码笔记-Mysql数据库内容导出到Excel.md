@@ -25,7 +25,7 @@ type VillageRecord struct {
 	CarNum         string	`xlsx:"G-车牌号"`
 	...
 }
-func FindAllInfo()(result []*VillageRecord,err error){
+func (item *VillageRecord)FindAllInfo()(result []*VillageRecord,err error){
 	db := gormNew()
 	err = db.Find(&result).Error
 	return result, err
